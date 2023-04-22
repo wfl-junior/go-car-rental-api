@@ -1,14 +1,17 @@
 package controllers
 
 import (
+	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
 	"github.com/wfl-junior/go-car-rental-api/models"
+	CarRepository "github.com/wfl-junior/go-car-rental-api/repositories/cars"
+	"gorm.io/gorm"
 )
 
-func Create(context *gin.Context) {
+func Update(context *gin.Context) {
 	// get data from body
 	var body CarBody
 	if err := context.ShouldBindJSON(&body); err != nil {
@@ -19,8 +22,31 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	// create and save in database
-	car := models.Car {
+	// get the id from the path params
+	id := context.Param("id")
+
+	// get the car by id
+	car, err := CarRepository.GetById(id)
+
+	// return error response if there is an error
+	if err != nil {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
+			context.JSON(http.StatusNotFound, gin.H {
+				"error": "Car not found",
+			})
+	
+			return
+		}
+
+		context.JSON(http.StatusInternalServerError, gin.H {
+			"error": err.Error(),
+		})
+
+		return
+	}
+
+	// update and save in database
+	result := initializers.DB.Model(&car).Updates(models.Car {
 		Brand: body.Brand,
 		Model: body.Model,
 		PriceInUsd: body.PriceInUsd,
@@ -29,9 +55,7 @@ func Create(context *gin.Context) {
 		TopSpeedInKm: body.TopSpeedInKm,
 		AccelerationSpeedInKm: body.AccelerationSpeedInKm,
 		WeightInKg: body.WeightInKg,
-	}
-
-	result := initializers.DB.Create(&car)
+	})
 
 	// return error response if there is an error
 	if result.Error != nil {
@@ -42,7 +66,7 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	// return new car
+	// return updated car
 	context.JSON(http.StatusCreated, gin.H {
 		"car": car,
 	})

@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	controllers "github.com/wfl-junior/go-car-rental-api/controllers/cars"
+	CarController "github.com/wfl-junior/go-car-rental-api/controllers/cars"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
 )
 
@@ -15,7 +15,11 @@ func main() {
 	router := gin.Default()
 
 	// cars
-	router.POST("/cars", controllers.CarsCreate)
+	router.GET("/cars", CarController.Index)
+	router.POST("/cars", CarController.Create)
+	router.GET("/cars/:id", CarController.Show)
+	router.PUT("/cars/:id", CarController.Update)
+	router.DELETE("/cars/:id", CarController.Delete)
 
 	router.Run()
 }
