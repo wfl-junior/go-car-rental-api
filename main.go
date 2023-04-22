@@ -2,9 +2,11 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	AuthController "github.com/wfl-junior/go-car-rental-api/controllers/auth"
 	BrandController "github.com/wfl-junior/go-car-rental-api/controllers/brands"
 	CarController "github.com/wfl-junior/go-car-rental-api/controllers/cars"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
+	"github.com/wfl-junior/go-car-rental-api/middleware"
 )
 
 func init() {
@@ -28,6 +30,11 @@ func main() {
 	router.GET("/brands/:id", BrandController.Show)
 	router.PUT("/brands/:id", BrandController.Update)
 	router.DELETE("/brands/:id", BrandController.Delete)
+
+	// auth
+	router.POST("/auth/register", AuthController.Register)
+	router.POST("/auth/login", AuthController.Login)
+	router.GET("/auth/me", middleware.RequireAuth, AuthController.Me)
 
 	router.Run()
 }

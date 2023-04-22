@@ -7,11 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
 	"github.com/wfl-junior/go-car-rental-api/models"
+	"golang.org/x/crypto/bcrypt"
 )
 
-func Create(context *gin.Context) {
+func Register(context *gin.Context) {
 	// get data from body
-	var body CarBody
+	var body RegisterBody
 	if err := context.ShouldBindJSON(&body); err != nil {
 		context.JSON(http.StatusUnprocessableEntity, gin.H{
 			"error": err.Error(),
@@ -20,26 +21,32 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	// create and save in database
-	car := models.Car{
-		BrandId:               body.BrandId,
-		Model:                 body.Model,
-		RentalPriceDailyInUsd: body.RentalPriceDailyInUsd,
-		HorsePower:            body.HorsePower,
-		TorqueInLb:            body.TorqueInLb,
-		TopSpeedInKm:          body.TopSpeedInKm,
-		AccelerationSpeedInKm: body.AccelerationSpeedInKm,
-		WeightInKg:            body.WeightInKg,
+	// hash password
+	hash, err := bcrypt.GenerateFromPassword([]byte(body.Password), 10)
+
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+
+		return
 	}
 
-	result := initializers.DB.Create(&car)
+	// create user and save in database
+	user := models.User{
+		Name:     body.Name,
+		Email:    body.Email,
+		Password: string(hash),
+	}
+
+	result := initializers.DB.Create(&user)
 
 	// return error response if there is an error
 	if result.Error != nil {
 		errorMessage := result.Error.Error()
 		if strings.Contains(errorMessage, "unique constraint") {
 			context.JSON(http.StatusConflict, gin.H{
-				"error": "Car model already exists for this brand",
+				"error": "User e-mail already registered",
 			})
 
 			return
@@ -52,8 +59,8 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	// return new car
+	// return new user
 	context.JSON(http.StatusCreated, gin.H{
-		"car": car,
+		"user": user,
 	})
 }

@@ -50,7 +50,7 @@ func Update(context *gin.Context) {
 	result := initializers.DB.Model(&car).Updates(models.Car{
 		BrandId:               body.BrandId,
 		Model:                 body.Model,
-		PriceInUsd:            body.PriceInUsd,
+		RentalPriceDailyInUsd: body.RentalPriceDailyInUsd,
 		HorsePower:            body.HorsePower,
 		TorqueInLb:            body.TorqueInLb,
 		TopSpeedInKm:          body.TopSpeedInKm,
