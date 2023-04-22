@@ -11,5 +11,6 @@ func init() {
 }
 
 func main() {
+	initializers.DB.AutoMigrate(&models.Brand{})
 	initializers.DB.AutoMigrate(&models.Car{})
 }

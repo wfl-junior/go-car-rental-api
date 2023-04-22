@@ -4,12 +4,12 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	CarRepository "github.com/wfl-junior/go-car-rental-api/repositories/cars"
+	BrandRepository "github.com/wfl-junior/go-car-rental-api/repositories/brands"
 )
 
 func Index(context *gin.Context) {
-	// get the cars
-	cars, err := CarRepository.GetAll()
+	// get the brands
+	brands, err := BrandRepository.GetAll()
 
 	// return error response if there is an error
 	if err != nil {
@@ -20,8 +20,8 @@ func Index(context *gin.Context) {
 		return
 	}
 
-	// return the cars
+	// return the brands
 	context.JSON(http.StatusOK, gin.H{
-		"cars": cars,
+		"brands": brands,
 	})
 }

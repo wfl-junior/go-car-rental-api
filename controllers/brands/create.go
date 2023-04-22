@@ -11,7 +11,7 @@ import (
 
 func Create(context *gin.Context) {
 	// get data from body
-	var body CarBody
+	var body BrandBody
 	if err := context.ShouldBindJSON(&body); err != nil {
 		context.JSON(http.StatusUnprocessableEntity, gin.H{
 			"error": err.Error(),
@@ -21,25 +21,18 @@ func Create(context *gin.Context) {
 	}
 
 	// create and save in database
-	car := models.Car{
-		BrandId:               body.BrandId,
-		Model:                 body.Model,
-		PriceInUsd:            body.PriceInUsd,
-		HorsePower:            body.HorsePower,
-		TorqueInLb:            body.TorqueInLb,
-		TopSpeedInKm:          body.TopSpeedInKm,
-		AccelerationSpeedInKm: body.AccelerationSpeedInKm,
-		WeightInKg:            body.WeightInKg,
+	brand := models.Brand{
+		Name: body.Name,
 	}
 
-	result := initializers.DB.Create(&car)
+	result := initializers.DB.Create(&brand)
 
 	// return error response if there is an error
 	if result.Error != nil {
 		errorMessage := result.Error.Error()
 		if strings.Contains(errorMessage, "unique constraint") {
 			context.JSON(http.StatusConflict, gin.H{
-				"error": "Car model already exists for this brand",
+				"error": "Brand name already exists",
 			})
 
 			return
@@ -52,8 +45,8 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	// return new car
+	// return new brand
 	context.JSON(http.StatusCreated, gin.H{
-		"car": car,
+		"brand": brand,
 	})
 }

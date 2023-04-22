@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	CarRepository "github.com/wfl-junior/go-car-rental-api/repositories/cars"
+	BrandRepository "github.com/wfl-junior/go-car-rental-api/repositories/brands"
 	"gorm.io/gorm"
 )
 
@@ -13,14 +13,14 @@ func Show(context *gin.Context) {
 	// get the id from the path params
 	id := context.Param("id")
 
-	// get the car by id
-	car, err := CarRepository.GetById(id)
+	// get the brand by id
+	brand, err := BrandRepository.GetById(id)
 
 	// return error response if there is an error
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			context.JSON(http.StatusNotFound, gin.H{
-				"error": "Car not found",
+				"error": "Brand not found",
 			})
 
 			return
@@ -33,8 +33,8 @@ func Show(context *gin.Context) {
 		return
 	}
 
-	// return the car
+	// return the brand
 	context.JSON(http.StatusOK, gin.H{
-		"car": car,
+		"brand": brand,
 	})
 }

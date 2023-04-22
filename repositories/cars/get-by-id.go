@@ -7,7 +7,7 @@ import (
 
 func GetById(id string) (models.Car, error) {
 	var car models.Car
-	err := initializers.DB.Where("id = ?", id).First(&car).Error
+	err := initializers.DB.Where("id = ?", id).Preload("Brand").First(&car).Error
 
 	return car, err
 }

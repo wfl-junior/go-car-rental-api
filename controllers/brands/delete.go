@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
-	CarRepository "github.com/wfl-junior/go-car-rental-api/repositories/cars"
+	BrandRepository "github.com/wfl-junior/go-car-rental-api/repositories/brands"
 	"gorm.io/gorm"
 )
 
@@ -14,14 +14,14 @@ func Delete(context *gin.Context) {
 	// get the id from the path params
 	id := context.Param("id")
 
-	// get the car by id
-	car, err := CarRepository.GetById(id)
+	// get the brand by id
+	brand, err := BrandRepository.GetById(id)
 
 	// return error response if there is an error
 	if err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			context.JSON(http.StatusNotFound, gin.H{
-				"error": "Car not found",
+				"error": "Brand not found",
 			})
 
 			return
@@ -34,8 +34,8 @@ func Delete(context *gin.Context) {
 		return
 	}
 
-	// delete the car
-	result := initializers.DB.Delete(&car)
+	// delete the brand
+	result := initializers.DB.Delete(&brand)
 
 	// return error response if there is an error
 	if result.Error != nil {
