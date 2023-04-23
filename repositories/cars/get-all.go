@@ -7,7 +7,12 @@ import (
 
 func GetAll() ([]models.Car, error) {
 	var cars []models.Car
-	err := initializers.DB.Preload("Brand").Order("created_at asc").Find(&cars).Error
+	err := initializers.
+		DB.
+		Preload("Brand").
+		Order("created_at asc").
+		Find(&cars).
+		Error
 
 	return cars, err
 }

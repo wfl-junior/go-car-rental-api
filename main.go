@@ -36,6 +36,7 @@ func main() {
 	router.POST("/auth/register", AuthController.Register)
 	router.POST("/auth/login", AuthController.Login)
 	router.GET("/auth/me", middleware.RequireAuth, AuthController.Me)
+	router.GET("/auth/me/rentals", middleware.RequireAuth, AuthController.MyRentals)
 
 	// rentals
 	router.GET("/rentals", RentalController.Index)
