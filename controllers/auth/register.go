@@ -6,7 +6,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
+	UserMappers "github.com/wfl-junior/go-car-rental-api/mappers/users"
 	"github.com/wfl-junior/go-car-rental-api/models"
+	"github.com/wfl-junior/go-car-rental-api/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -59,8 +61,20 @@ func Register(context *gin.Context) {
 		return
 	}
 
+	// generate jwt
+	accessToken, err := utils.GenerateAccessToken(user.Id)
+
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+
+		return
+	}
+
 	// return new user
 	context.JSON(http.StatusCreated, gin.H{
-		"user": user,
+		"accessToken": accessToken,
+		"user":        UserMappers.ToBaseViewModel(user),
 	})
 }

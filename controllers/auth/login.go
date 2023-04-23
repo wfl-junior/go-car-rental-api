@@ -3,13 +3,11 @@ package controllers
 import (
 	"errors"
 	"net/http"
-	"os"
-	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt/v5"
 	UserMappers "github.com/wfl-junior/go-car-rental-api/mappers/users"
 	UserRepository "github.com/wfl-junior/go-car-rental-api/repositories/users"
+	"github.com/wfl-junior/go-car-rental-api/utils"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
@@ -58,13 +56,7 @@ func Login(context *gin.Context) {
 	}
 
 	// generate jwt
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"sub": user.Id,
-		"exp": time.Now().Add(time.Hour * 24).Unix(),
-	})
-
-	secret := os.Getenv("JWT_SECRET")
-	tokenString, err := token.SignedString([]byte(secret))
+	accessToken, err := utils.GenerateAccessToken(user.Id)
 
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{
@@ -76,7 +68,7 @@ func Login(context *gin.Context) {
 
 	// return user and jwt
 	context.JSON(http.StatusOK, gin.H{
-		"accessToken": tokenString,
+		"accessToken": accessToken,
 		"user":        UserMappers.ToBaseViewModel(user),
 	})
 }

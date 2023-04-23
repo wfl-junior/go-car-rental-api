@@ -40,6 +40,7 @@ func main() {
 	// rentals
 	router.GET("/rentals", RentalController.Index)
 	router.POST("/rentals", middleware.RequireAuth, RentalController.Create)
+	router.PATCH("/rentals/:id/cancel", middleware.RequireAuth, RentalController.Cancel)
 
 	router.Run()
 }

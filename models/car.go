@@ -19,6 +19,6 @@ type Car struct {
 	AccelerationSpeedInKm float32   `gorm:"notNull"`
 	WeightInKg            uint16    `gorm:"notNull"`
 
-	Brand   Brand
+	Brand   *Brand
 	Rentals []Rental
 }

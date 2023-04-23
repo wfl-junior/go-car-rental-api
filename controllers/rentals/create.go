@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"errors"
 	"net/http"
 	"strings"
 	"time"
@@ -11,7 +10,6 @@ import (
 	"github.com/wfl-junior/go-car-rental-api/models"
 	RentalRepository "github.com/wfl-junior/go-car-rental-api/repositories/rentals"
 	"github.com/wfl-junior/go-car-rental-api/utils"
-	"gorm.io/gorm"
 )
 
 func Create(context *gin.Context) {
@@ -54,13 +52,13 @@ func Create(context *gin.Context) {
 
 	user := utils.GetUserFromContext(context)
 
-	_, err := RentalRepository.GetOverlappingByCarId(
+	hasOverlapping, err := RentalRepository.HasOverlappingByCarId(
 		body.CarId,
 		body.StartsAt,
 		body.EndsAt,
 	)
 
-	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
@@ -68,7 +66,7 @@ func Create(context *gin.Context) {
 		return
 	}
 
-	if err == nil {
+	if hasOverlapping {
 		context.JSON(http.StatusConflict, gin.H{
 			"error": "This car is already rented during the specified period",
 		})

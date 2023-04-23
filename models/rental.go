@@ -1,7 +1,6 @@
 package models
 
 import (
-	"database/sql"
 	"time"
 
 	"github.com/google/uuid"
@@ -15,8 +14,8 @@ type Rental struct {
 	UpdatedAt  time.Time `gorm:"notNull"`
 	StartsAt   time.Time `gorm:"notNull"`
 	EndsAt     time.Time `gorm:"notNull"`
-	CanceledAt sql.NullTime
+	CanceledAt *time.Time
 
-	User User
-	Car  Car
+	User *User
+	Car  *Car
 }
