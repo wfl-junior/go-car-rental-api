@@ -7,7 +7,7 @@ import (
 
 func GetById(id string) (models.User, error) {
 	var user models.User
-	err := initializers.DB.Where("id = ?", id).First(&user).Error
+	err := initializers.DB.Where("id = ?", id).Take(&user).Error
 
 	return user, err
 }

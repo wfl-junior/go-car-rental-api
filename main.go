@@ -5,6 +5,7 @@ import (
 	AuthController "github.com/wfl-junior/go-car-rental-api/controllers/auth"
 	BrandController "github.com/wfl-junior/go-car-rental-api/controllers/brands"
 	CarController "github.com/wfl-junior/go-car-rental-api/controllers/cars"
+	RentalController "github.com/wfl-junior/go-car-rental-api/controllers/rentals"
 	"github.com/wfl-junior/go-car-rental-api/initializers"
 	"github.com/wfl-junior/go-car-rental-api/middleware"
 )
@@ -35,6 +36,9 @@ func main() {
 	router.POST("/auth/register", AuthController.Register)
 	router.POST("/auth/login", AuthController.Login)
 	router.GET("/auth/me", middleware.RequireAuth, AuthController.Me)
+
+	// rentals
+	router.POST("/rentals", middleware.RequireAuth, RentalController.Create)
 
 	router.Run()
 }
