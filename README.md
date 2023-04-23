@@ -12,6 +12,7 @@ Basic api for car rentals to study Golang
 1. Clone the project
 1. Run the command `mv .env.example .env` to rename the `.env.example` file to `.env`
 1. Fill in with the environment variables in the `.env` file
+1. Run the database migrations with the command `go run database/migrate.go`
 1. Run the server with the command `go run main.go`
 
 ### Environment Variables
