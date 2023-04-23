@@ -8,8 +8,17 @@ import (
 )
 
 func Index(context *gin.Context) {
+	// get query params
+	carId := context.Query("CarId")
+	startsAt := context.Query("StartsAt")
+	endsAt := context.Query("EndsAt")
+
 	// get the rentals
-	rentals, err := RentalRepository.GetAll()
+	rentals, err := RentalRepository.GetAll(RentalRepository.GetAllParams{
+		CarId:    carId,
+		StartsAt: startsAt,
+		EndsAt:   endsAt,
+	})
 
 	// return error response if there is an error
 	if err != nil {

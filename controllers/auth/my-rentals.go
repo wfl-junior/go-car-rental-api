@@ -9,11 +9,21 @@ import (
 )
 
 func MyRentals(context *gin.Context) {
+	// get query params
+	carId := context.Query("CarId")
+	startsAt := context.Query("StartsAt")
+	endsAt := context.Query("EndsAt")
+
 	// get user from request
 	user := utils.GetUserFromContext(context)
 
 	// get the user rentals
-	rentals, err := RentalRepository.GetAllByUserId(user.Id)
+	rentals, err := RentalRepository.GetAll(RentalRepository.GetAllParams{
+		UserId:   user.Id.String(),
+		CarId:    carId,
+		StartsAt: startsAt,
+		EndsAt:   endsAt,
+	})
 
 	// return error response if there is an error
 	if err != nil {
