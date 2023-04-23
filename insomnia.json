@@ -1,0 +1,778 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-04-23T15:52:10.501Z",
+  "__export_source": "insomnia.desktop.app:v2023.1.0",
+  "resources": [
+    {
+      "_id": "req_77f73763bfcd4afb912fadae9689e6d6",
+      "parentId": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "modified": 1682186190699,
+      "created": 1682186186839,
+      "url": "{{ _.baseUrl }}/brands",
+      "name": "Index",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1682175323736.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682265002001,
+      "created": 1682186186835,
+      "name": "Brands",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1682202542572,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "parentId": null,
+      "modified": 1682175279145,
+      "created": 1682175279145,
+      "name": "Go Car Rental Api",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_3539afa356a4422ea45498227ac43b24",
+      "parentId": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "modified": 1682265034908,
+      "created": 1682186186843,
+      "url": "{{ _.baseUrl }}/brands",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"Name\": \"Lamborghini\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_449c5891f7534388913e34c98dc9b912"
+        },
+        {
+          "id": "pair_b47252a82f8f4941a2367888950dfb99",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681928123143.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c9fd857b3a8141fc831573b27fad8f1f",
+      "parentId": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "modified": 1682191412450,
+      "created": 1682186186847,
+      "url": "{{ _.baseUrl }}/brands/944feea4-af81-4fe1-916e-bf96d0765e65",
+      "name": "Show",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681928123093.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f5734c0344ae46baa2011f6e285dc417",
+      "parentId": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "modified": 1682186234008,
+      "created": 1682186186850,
+      "url": "{{ _.baseUrl }}/brands/fb6a30da-479f-4000-8b01-9c15d62a6476",
+      "name": "Update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"Name\": \"Lamborghini\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681804522821.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_682b61f48e45444c8bba482d3f941f3b",
+      "parentId": "fld_b2ad2cf390ef43748a1fdf4ffe564681",
+      "modified": 1682186236105,
+      "created": 1682186186854,
+      "url": "{{ _.baseUrl }}/brands/6692ab90-1adc-4014-a248-7afce9333fd2",
+      "name": "Delete",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681804522771.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1de6ddd0207f4924950f0797f0e45443",
+      "parentId": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "modified": 1682180275141,
+      "created": 1682175307069,
+      "url": "{{ _.baseUrl }}/cars",
+      "name": "Index",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1682175323736.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682265009234,
+      "created": 1682175326117,
+      "name": "Cars",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1682199083699,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_d367b350b45e4c9ab7f7b789535e2abf",
+      "parentId": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "modified": 1682265087449,
+      "created": 1682177664276,
+      "url": "{{ _.baseUrl }}/cars",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"BrandId\": \"a8dfb4ed-8ad4-4eed-b841-33b8b5249162\",\n\t\"Model\": \"Hurácan EVO\",\n\t\"PriceInUsd\": 357.91,\n\t\"HorsePower\": 640,\n\t\"TorqueInLb\": 442,\n\t\"TopSpeedInKm\": 325,\n\t\"AccelerationSpeedInKm\": 2.9,\n\t\"WeightInKg\": 1422\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_449c5891f7534388913e34c98dc9b912"
+        },
+        {
+          "id": "pair_b47252a82f8f4941a2367888950dfb99",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681928123143.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_07499fa64cda46d6a0c98d11128a9cd7",
+      "parentId": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "modified": 1682186762612,
+      "created": 1682180272049,
+      "url": "{{ _.baseUrl }}/cars/18b2c19a-4245-416f-b0ba-a8205c20086f",
+      "name": "Show",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681928123093.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ed6cb11107724e8285921bc40051ec96",
+      "parentId": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "modified": 1682265093917,
+      "created": 1682181405222,
+      "url": "{{ _.baseUrl }}/cars/fb6a30da-479f-4000-8b01-9c15d62a6476",
+      "name": "Update",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"BrandId\": \"a8dfb4ed-8ad4-4eed-b841-33b8b5249162\",\n\t\"Model\": \"Hurácan EVO\",\n\t\"PriceInUsd\": 357.91,\n\t\"HorsePower\": 640,\n\t\"TorqueInLb\": 442,\n\t\"TopSpeedInKm\": 325,\n\t\"AccelerationSpeedInKm\": 2.9,\n\t\"WeightInKg\": 1422\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681804522821.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_65f5564ca3e04ed6b50fd84a0905f3b8",
+      "parentId": "fld_16b5c9217ba44568a54194a29a31d1da",
+      "modified": 1682182587947,
+      "created": 1682181539954,
+      "url": "{{ _.baseUrl }}/cars/6692ab90-1adc-4014-a248-7afce9333fd2",
+      "name": "Delete",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_119c13af58604091ba07678a18802222",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_8e5ef2b605b541c890ab00029a038b05",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1681804522771.7188,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a933399f5ffb4e1b8ead2371b86e796e",
+      "parentId": "fld_1f8f1daeefd24ef594e950c537a620fa",
+      "modified": 1682264933937,
+      "created": 1682199086266,
+      "url": "{{ _.baseUrl }}/auth/register",
+      "name": "Register",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"Name\": \"Test\",\n\t\"Email\": \"email@test.com\",\n\t\"Password\": \"Password\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c9826c51c3e94d4b8ff00744ecd70283"
+        },
+        {
+          "id": "pair_589b0220d2a741deba5d5801b8293252",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1682199086266,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_1f8f1daeefd24ef594e950c537a620fa",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682265024424,
+      "created": 1682199083749,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1682199083674,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_980e2d5e6ee24de58e852eb6f5d187f0",
+      "parentId": "fld_1f8f1daeefd24ef594e950c537a620fa",
+      "modified": 1682264954010,
+      "created": 1682199948066,
+      "url": "{{ _.baseUrl }}/auth/login",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"Email\": \"email@test.com\",\n\t\"Password\": \"Password\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c9826c51c3e94d4b8ff00744ecd70283"
+        },
+        {
+          "id": "pair_589b0220d2a741deba5d5801b8293252",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1682187205001.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e00798712bd94b139d67223b25e6d6a4",
+      "parentId": "fld_1f8f1daeefd24ef594e950c537a620fa",
+      "modified": 1682202467823,
+      "created": 1682202191997,
+      "url": "{{ _.baseUrl }}/auth/me",
+      "name": "Me",
+      "description": "",
+      "method": "GET",
+      "body": { "mimeType": "application/json", "text": "" },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c9826c51c3e94d4b8ff00744ecd70283"
+        },
+        {
+          "id": "pair_589b0220d2a741deba5d5801b8293252",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODIyODg4NTAsInN1YiI6IjUzYzMzMDFkLTAyMmQtNDFlZC05NGIzLTY5NjFhMzE0NTYzYSJ9.9qHwByYVAW1UQ98UNanl2JoGNBRP_R6SnAOT7mACunY"
+      },
+      "metaSortKey": -1682181264369.1562,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_d98d3edaf291457c80fee4728ce2ca03",
+      "parentId": "fld_1f8f1daeefd24ef594e950c537a620fa",
+      "modified": 1682261210753,
+      "created": 1682258195094,
+      "url": "{{ _.baseUrl }}/auth/me/rentals",
+      "name": "My Rentals",
+      "description": "",
+      "method": "GET",
+      "body": { "mimeType": "application/json", "text": "" },
+      "parameters": [
+        {
+          "id": "pair_dc540daa149f4be69929150f9a93a5f9",
+          "name": "CarId",
+          "value": "18b2c19a-4245-416f-b0ba-a8205c20086f",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_c9826c51c3e94d4b8ff00744ecd70283"
+        },
+        {
+          "id": "pair_589b0220d2a741deba5d5801b8293252",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODIzNDc0MTMsInN1YiI6IjUzYzMzMDFkLTAyMmQtNDFlZC05NGIzLTY5NjFhMzE0NTYzYSJ9.lBXHpbTz-ikR73Un6Rpp3_cX4Qtij5CnHWMTuyowUAo"
+      },
+      "metaSortKey": -1682178294053.0156,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_49643004d4944caf84da2645c1393ebd",
+      "parentId": "fld_ccdb008120ca4b20bd1d89e7c28f6021",
+      "modified": 1682260907308,
+      "created": 1682211310952,
+      "url": "{{ _.baseUrl }}/rentals",
+      "name": "Index",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_80521df07f154975847b4b9679502625",
+          "name": "CarId",
+          "value": "63593ad6-1064-4590-aac5-807c9f51cb18",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_f36ac87af916473189c07baa96743a3c",
+          "name": "StartsAt",
+          "value": "2023-04-22T21:32:21.410382-03:00",
+          "description": "",
+          "disabled": true
+        },
+        {
+          "id": "pair_c2db983c57254506bec216b5a23fcb8b",
+          "name": "EndsAt",
+          "value": "2023-04-22T23:59:51.410382-03:00",
+          "description": "",
+          "disabled": true
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_b4edc232956f4c4fba726c5032fec6ca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_81d1c845c85144868bb45ea1ac5cbb20",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": { "type": "bearer", "token": "", "disabled": true },
+      "metaSortKey": -1682205570466.9375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ccdb008120ca4b20bd1d89e7c28f6021",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682265021078,
+      "created": 1682206001395,
+      "name": "Rentals",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1682199083649,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_16bdb43c33894b82bad427ca97f37d3d",
+      "parentId": "fld_ccdb008120ca4b20bd1d89e7c28f6021",
+      "modified": 1682260930110,
+      "created": 1682206002747,
+      "url": "{{ _.baseUrl }}/rentals",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"CarId\": \"18b2c19a-4245-416f-b0ba-a8205c20086f\",\n\t\"StartsAt\": \"2023-04-23T22:33:18.410382-03:00\",\n\t\"EndsAt\": \"2023-04-23T23:34:50.410382-03:00\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d37ee562ff5844d9adedd2f2fee7a631"
+        },
+        {
+          "id": "pair_b4edc232956f4c4fba726c5032fec6ca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODIzNDQ4NzAsInN1YiI6IjMyMGNiYWVjLWY5NDYtNDZlYy1iMGM0LTcyMzJlMTdlMzU2MiJ9.HvUe-DL6iS8yDKY6jx5LnkiMxhVkoqr-iI4rPqCzeNo"
+      },
+      "metaSortKey": -1682205570416.9375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6ae9b7c2195b459b9d4aac10ea4c781a",
+      "parentId": "fld_ccdb008120ca4b20bd1d89e7c28f6021",
+      "modified": 1682256381135,
+      "created": 1682255424165,
+      "url": "{{ _.baseUrl }}/rentals/6f45d827-1758-4495-af30-4dea089ca53c/cancel",
+      "name": "Cancel",
+      "description": "",
+      "method": "PATCH",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_b4edc232956f4c4fba726c5032fec6ca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_b549aa6a3ea04eefaec1e12a76eb200d",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODIyODg4NTAsInN1YiI6IjUzYzMzMDFkLTAyMmQtNDFlZC05NGIzLTY5NjFhMzE0NTYzYSJ9.9qHwByYVAW1UQ98UNanl2JoGNBRP_R6SnAOT7mACunY"
+      },
+      "metaSortKey": -1682202328341.4688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_28520442490e1a143ea4144965f6bf5ff5ca4836",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682175289536,
+      "created": 1682175279150,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1682175279150,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_28520442490e1a143ea4144965f6bf5ff5ca4836",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682175279152,
+      "created": 1682175279152,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_817b00a3a5464db2a9c115796ce87467",
+      "parentId": "wrk_4fa745e9a7f94bd2b6d91db2db2c9d78",
+      "modified": 1682175279146,
+      "created": 1682175279146,
+      "fileName": "Go Car Rental Api",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_2ada5d7677a94a8fb6293970899f415c",
+      "parentId": "env_28520442490e1a143ea4144965f6bf5ff5ca4836",
+      "modified": 1682175302662,
+      "created": 1682175290533,
+      "name": "Dev",
+      "data": { "baseUrl": "http://localhost:4000" },
+      "dataPropertyOrder": { "&": ["baseUrl"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1682175290533,
+      "_type": "environment"
+    }
+  ]
+}

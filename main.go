@@ -18,13 +18,6 @@ func init() {
 func main() {
 	router := gin.Default()
 
-	// cars
-	router.GET("/cars", CarController.Index)
-	router.POST("/cars", CarController.Create)
-	router.GET("/cars/:id", CarController.Show)
-	router.PUT("/cars/:id", CarController.Update)
-	router.DELETE("/cars/:id", CarController.Delete)
-
 	// brands
 	router.GET("/brands", BrandController.Index)
 	router.POST("/brands", BrandController.Create)
@@ -32,16 +25,31 @@ func main() {
 	router.PUT("/brands/:id", BrandController.Update)
 	router.DELETE("/brands/:id", BrandController.Delete)
 
+	// cars
+	router.GET("/cars", CarController.Index)
+	router.POST("/cars", CarController.Create)
+	router.GET("/cars/:id", CarController.Show)
+	router.PUT("/cars/:id", CarController.Update)
+	router.DELETE("/cars/:id", CarController.Delete)
+
 	// auth
 	router.POST("/auth/register", AuthController.Register)
 	router.POST("/auth/login", AuthController.Login)
 	router.GET("/auth/me", middleware.RequireAuth, AuthController.Me)
-	router.GET("/auth/me/rentals", middleware.RequireAuth, AuthController.MyRentals)
+	router.GET(
+		"/auth/me/rentals",
+		middleware.RequireAuth,
+		AuthController.MyRentals,
+	)
 
 	// rentals
 	router.GET("/rentals", RentalController.Index)
 	router.POST("/rentals", middleware.RequireAuth, RentalController.Create)
-	router.PATCH("/rentals/:id/cancel", middleware.RequireAuth, RentalController.Cancel)
+	router.PATCH(
+		"/rentals/:id/cancel",
+		middleware.RequireAuth,
+		RentalController.Cancel,
+	)
 
 	router.Run()
 }
